@@ -33,7 +33,7 @@
           <div class="card text-white bg-primary o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-chat"></i>
+                <i class="fa fa-fw fa-comments"></i>
               </div>
               <div class="mr-5"><span class="badge badge-light">
                @php 
@@ -54,7 +54,7 @@
           <div class="card text-white bg-success o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-shopping-bag"></i>
+                <i class="fa fa-fw fa-bed"></i>
               </div>
               <div class="mr-5"><span class="badge badge-light"> @php 
                $rooms=DB::table('products')
@@ -78,7 +78,7 @@
           <div class="card text-white bg-danger o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-money"></i>
+                <i class="fa fa-fw fa-coffee"></i>
               </div>
               <div class="mr-5"><span class="badge badge-light">@php
   $meals=DB::table('products')

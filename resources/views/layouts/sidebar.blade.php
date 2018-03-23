@@ -4,7 +4,7 @@
     @case($level==1)
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="{{('/main')}}">
+          <a class="nav-link" href="{{url('/admin')}}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -17,31 +17,34 @@
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="{{url('admin/meals')}}">
-            <i class="fa fa-fw fa-users"></i>
+            <i class="fa fa-fw fa-coffee"></i>
             <span class="nav-link-text">Meals</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Products">
-          <a class="nav-link" href="{{url('admin/rooms')}}">
-            <i class="fa fa-fw fa-shopping-bag"></i>
-            <span class="nav-link-text">Rooms/Facilities</span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Orders and Bookings</span>
           </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="{{url('/admin/booked-rooms')}}">Booked Rooms/Facilities</a>
+            </li>
+            <li>
+              <a href="{{url('/admin/ordered-meals')}}">Ordered Meals</a>
+            </li>
+          </ul>
         </li>
-        <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>Orders and Bookings</span><i class="fa fa-angle-right"></i></a>
-      <ul class="treeview-menu">
-      <li><a href="{{url('/admin/booked-rooms')}}"><i class="fa fa-circle-o"></i>Booked Rooms/Facilities</a></li>
-      <li><a href="{{url('/admin/ordered-meals')}}"><i class="fa fa-circle-o"></i>Ordered Meals</a></li>
-     </ul>
-</li>
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="{{url('admin/messages')}}">
-            <i class="fa fa-fw fa-users"></i>
+            <i class="fa fa-fw fa-comments"></i>
             <span class="nav-link-text">Messages</span>
           </a>
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile">
-          <a class="nav-link" href="{{('main/profile')}}">
+          <a class="nav-link" href="{{url('admin/profile')}}">
             <i class="fa fa-fw fa-address-card-o"></i>
             <span class="nav-link-text">Profile</span>
           </a>
@@ -51,7 +54,7 @@
     @case($level==2)
        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="{{('/main')}}">
+          <a class="nav-link" href="{{url('/admin')}}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -69,7 +72,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile">
-          <a class="nav-link" href="{{('main/profile')}}">
+          <a class="nav-link" href="{{url('admin/profile')}}">
             <i class="fa fa-fw fa-address-card-o"></i>
             <span class="nav-link-text">Profile</span>
           </a>
@@ -80,7 +83,7 @@
     @default
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="{{('/main')}}">
+          <a class="nav-link" href="{{url('/admin')}}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -117,7 +120,7 @@
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile">
-          <a class="nav-link" href="{{('main/profile')}}">
+          <a class="nav-link" href="{{url('admin/profile')}}">
             <i class="fa fa-fw fa-address-card-o"></i>
             <span class="nav-link-text">Profile</span>
           </a>
