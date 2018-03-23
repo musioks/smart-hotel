@@ -6,57 +6,81 @@
  @stop
 
 @section('content')
-         <div class="row">
-          <div class="col-md-3">
-            <div class="widget-small primary"><i class="icon fa fa-users fa-3x"></i>
-              <div class="info">
-                <h4>Customers</h4>
-                <p><b>
-                  @php 
+
+<!-- Icon Cards-->
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-warning o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-group"></i>
+              </div>
+              <div class="mr-5"><span class="badge badge-light">@php 
                $customers=\DB::table('customers')->get()->count();
                   @endphp
-                {{$customers}}
-                </b></p>
-              </div>
+                  {{$customers}}
+                </span> Customers!</div>
             </div>
+            <a class="card-footer text-white clearfix small z-1" href="{{url('admin/customers')}}">
+              <span class="float-left">View Details</span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
           </div>
-          <div class="col-md-3">
-            <div class="widget-small info"><i class="icon fa fa-inbox fa-3x"></i>
-              <div class="info">
-                <h4>Customer messages</h4>
-                <p><b>
-                      @php 
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-chat"></i>
+              </div>
+              <div class="mr-5"><span class="badge badge-light">
+               @php 
                $messages=\DB::table('messages')->get()->count();
                   @endphp
                 {{$messages}}
-
-                </b></p>
-              </div>
+                </span> Customer Messages </div>
             </div>
+            <a class="card-footer text-white clearfix small z-1" href="{{url('admin/messages')}}">
+              <span class="float-left">View Details</span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
           </div>
-          <div class="col-md-3">
-            <div class="widget-small warning"><i class="icon fa fa-files-o fa-3x"></i>
-              <div class="info">
-                <h4>Rooms /Facilities</h4>
-                <p><b>
-                      @php 
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-success o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-shopping-bag"></i>
+              </div>
+              <div class="mr-5"><span class="badge badge-light"> @php 
                $rooms=DB::table('products')
                   ->join('categories','products.category_id','=','categories.id')
                   ->select('products.*','categories.name as category')
                   ->where('categories.name','like','%rooms%')
                   ->get()->count();
                   @endphp
-                {{$rooms}}
-                </b></p>
-              </div>
+                {{$rooms}}  
+                </span> Rooms /Facilities</div>
             </div>
+            <a class="card-footer text-white clearfix small z-1" href="{{url('admin/rooms')}}">
+              <span class="float-left">View Details</span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
           </div>
-          <div class="col-md-3">
-            <div class="widget-small danger"><i class="icon fa fa-bars fa-3x"></i>
-              <div class="info">
-                <h4>Meals</h4>
-                <p><b>
-                  @php
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-danger o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-money"></i>
+              </div>
+              <div class="mr-5"><span class="badge badge-light">@php
   $meals=DB::table('products')
                   ->join('categories','products.category_id','=','categories.id')
                   ->select('products.*','categories.name as category')
@@ -64,10 +88,18 @@
                   ->get()->count();
                   @endphp
                   {{$meals}}
-                </b></p>
-              </div>
+                </span> Meals</div>
             </div>
+            <a class="card-footer text-white clearfix small z-1" href="{{url('admin/meals')}}">
+              <span class="float-left">View Details</span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
           </div>
         </div>
+      </div>
+  
+    
        
 @stop
