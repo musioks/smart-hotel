@@ -23,8 +23,8 @@
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Orders and Bookings</span>
+            <i class="fa fa-fw fa-book"></i>
+            <span class="nav-link-text">Orders/Bookings</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>

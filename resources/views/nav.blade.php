@@ -1,51 +1,38 @@
-    <div class="navbar navbar-inverse" role="navigation" style="margin-bottom:1px;">
-          <div class="container">
-            @if(Auth::check())
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                      <span class="sr-only">Toggle navigation </span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
+ @if(Auth::check())
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Smart-Joint Hotel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-                  <a class="navbar-brand" href="{{url('/')}}">Smart Joint Hotel System</a>
-              </div>
-              <div class="navbar-collapse collapse navbar-responsive-collapse navbar-right">
-                  <ul class="nav navbar-nav ">
-        <li class="{{Request::is('/') ? 'active' : ''}}"> <a href="{{url('/')}}"> <i class="fa fa-home fa-fw"></i> Home</a></li>
-         <li class="{{Request::is('meals') ? 'active' : ''}}"> <a href="{{url('/meals')}}">  <i class="fa fa-bars fa-fw"></i>Meals</a></li>
-       <li class="{{Request::is('message') ? 'active' : ''}}"> <a href="{{url('/message')}}"> <i class="fa fa-phone fa-fw"></i> Contact Us</a></li>
-        <li class=""> <a href=""> <i class="fa fa-user fa-fw"></i> {{Auth::user()->name}} </a></li>
-       <li class=""> <a href="{{'/signout'}}"> <i class="fa fa-poweroff fa-fw"></i> Logout</a></li>
-    
-   
-                  </ul>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="{{url('/')}}">Home</a></li>
+      <li class="nav-item {{Request::is('meals') ? 'active' : ''}}"><a class="nav-link" href="{{url('/meals')}}">Meals</a></li>
+      <li class="nav-item {{Request::is('/message') ? 'active' : ''}}"><a class="nav-link" href="{{url('/message')}}">Contact Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="">{{Auth::user()->name}}</a></li>
+      <li class="nav-item"><a class="nav-link" href="{{'/signout'}}">Logout</a></li>
+    </ul>
+  </div>
+</nav>
 
-              </div>
 @else
 
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                      <span class="sr-only">Toggle navigation </span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Smart-Joint Hotel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="  navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-                  <a class="navbar-brand" href="{{url('/')}}">Smart Joint Hotel System</a>
-              </div>
-              <div class="navbar-collapse collapse navbar-responsive-collapse navbar-right">
-                  <ul class="nav navbar-nav ">
-      <li class="{{Request::is('/') ? 'active' : ''}}"> <a href="{{url('/')}}"> <i class="fa fa-home fa-fw"></i> Home</a></li>
-      <li class="{{Request::is('meals') ? 'active' : ''}}"> <a href="{{url('/meals')}}">  <i class="fa fa-bars fa-fw"></i>Meals</a></li>
-      <li class="{{Request::is('message') ? 'active' : ''}}"> <a href="{{url('/message')}}"> <i class="fa fa-phone fa-fw"></i> Contact Us</a></li>
-      <li class="{{Request::is('customer') ? 'active' : ''}}"><a href="{{url('/customer')}}"> <i class="fa fa-user fa-fw"></i> Account</a></li>
-   
-   
-                  </ul>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="{{url('/')}}">Home</a></li>
+      <li class="nav-item {{Request::is('meals') ? 'active' : ''}}"><a class="nav-link" href="{{url('/meals')}}">Meals</a></li>
+      <li class="nav-item {{Request::is('/message') ? 'active' : ''}}"><a class="nav-link" href="{{url('/message')}}">Contact Us</a></li>
+      <li class="nav-item {{Request::is('/customer') ? 'active' : ''}}"><a class="nav-link" href="{{url('/customer')}}">Account</a></li>
+    </ul>
+    </ul>
+  </div>
+</nav>
 
-              </div>
-           @endif
-          </div>
-      </div>
+   @endif
