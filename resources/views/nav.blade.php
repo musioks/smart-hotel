@@ -6,7 +6,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
       <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="{{url('/')}}">Home</a></li>
       <li class="nav-item {{Request::is('meals') ? 'active' : ''}}"><a class="nav-link" href="{{url('/meals')}}">Meals</a></li>
       <li class="nav-item {{Request::is('/message') ? 'active' : ''}}"><a class="nav-link" href="{{url('/message')}}">Contact Us</a></li>
@@ -25,7 +25,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
       <li class="nav-item {{Request::is('/') ? 'active' : ''}}"><a class="nav-link" href="{{url('/')}}">Home</a></li>
       <li class="nav-item {{Request::is('meals') ? 'active' : ''}}"><a class="nav-link" href="{{url('/meals')}}">Meals</a></li>
       <li class="nav-item {{Request::is('/message') ? 'active' : ''}}"><a class="nav-link" href="{{url('/message')}}">Contact Us</a></li>
