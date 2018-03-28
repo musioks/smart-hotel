@@ -9,21 +9,15 @@
     <!-- Font-icon css-->
     
     <title>Smart Joint Hotel</title>
-    @include('layouts.styles')
+   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
   </head>
-  <style type="text/css">
-    .carousel-inner img{
-      width:100%;
-    }
-  </style>
   <body>
 
  <!--beginning of navigation bar-->
       @include('nav')
       <!--end of navigation bar-->
-
-<div class="container-fluid">
-
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">

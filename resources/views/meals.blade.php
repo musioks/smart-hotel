@@ -84,10 +84,7 @@
           @endif
   </div>
   </div><!--end main container-->
-   <script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/plugins/pace.min.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
 
   </body>
 </html>
