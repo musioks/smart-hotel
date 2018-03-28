@@ -20,6 +20,7 @@ class CreateBookingsTable extends Migration
             $table->date('checkin_date')->nullable();
             $table->date('checkout_date')->nullable();
             $table->integer('no_people')->nullable();
+        
             $table->foreign('product_id')
             ->references('id')
             ->on('products')

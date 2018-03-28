@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS-->
-   <link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
+    
     <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
+    
     <title>Smart Joint Hotel</title>
+    @include('layouts.styles')
   </head>
   <style type="text/css">
     .carousel-inner img{
@@ -23,46 +24,34 @@
 
 <div class="container-fluid">
 
-     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="{{asset('images/pic11.jpg')}}" alt="...">
-      <div class="carousel-caption">
-        <h3 class="text-white">Serene environment for refreshment..</h3>
-      </div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{{asset('images/pic1.jpg')}}" alt="First slide">
     </div>
-    <div class="item">
-      <img src="{{asset('images/pic2.jpg')}}" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{asset('images/pic3.jpg')}}" alt="Second slide">
     </div>
-    <div class="item">
-      <img src="{{asset('images/pic4.jpg')}}" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{asset('images/pic7.jpeg')}}" alt="Third slide">
     </div>
   </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
+
   <h3 >Welcome to Smart Joint Hotel <span class="label label-success">Please browse some of our facilities below</span></h3>
   <div class="panel panel-primary">
     <div class="panel-body">
@@ -138,11 +127,7 @@
           @endif
   </div>
   </div><!--end main container-->
-   <script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/plugins/pace.min.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/plugins/bootstrap-datepicker.min.js')}}"></script>
+ @include('layouts.scripts')
     <script type="text/javascript">
 
       
