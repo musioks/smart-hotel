@@ -4,18 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS-->
-    
-    <!-- Font-icon css-->
     
     <title>Smart Joint Hotel</title>
     @include('layouts.styles')
   </head>
-  <style type="text/css">
-    .carousel-inner img{
-      width:100%;
-    }
-  </style>
   <body>
 
  <!--beginning of navigation bar-->
@@ -52,7 +44,9 @@
   </a>
 </div>
 
-  <h3 >Welcome to Smart Joint Hotel <span class="label label-success">Please browse some of our facilities below</span></h3>
+  <h3 >Welcome to Smart Joint Hotel <span class="label label-success">Please browse some of our facilities below</span>
+
+  </h3>
   <div class="panel panel-primary">
     <div class="panel-body">
       <div class="row">

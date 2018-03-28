@@ -4,11 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS-->
-   <link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
-    <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
     <title>Smart Joint Hotel</title>
+    @include('layouts.styles')
   </head>
   <style type="text/css">
     .carousel-inner img{
@@ -19,9 +16,39 @@
       <!--beginning of navigation bar-->
       @include('nav')
       <!--end of navigation bar-->
-<div class="container-fluid">
+<div class="container">
 
   <h3 >Smart Joint Hotel Meals <span class="label label-success">Browse some of our meals and make an order</span></h3>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModalCenter" tabindex="-1" role="dialog" aria-labelledby="myModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
   <div class="panel panel-primary">
     <div class="panel-body">
       <div class="row">
@@ -84,10 +111,22 @@
           @endif
   </div>
   </div><!--end main container-->
-   <script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/plugins/pace.min.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
+   @include('layouts.scripts')
+    <script type="text/javascript">
 
+      
+      $('#datepicker1').datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayHighlight: true
+      });
+         $('#datepicker').datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayHighlight: true
+      });
+      
+      $('#demoSelect').select2();
+    </script>
   </body>
 </html>
