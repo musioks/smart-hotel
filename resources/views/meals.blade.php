@@ -112,8 +112,11 @@
   </div>
   </div><!--end main container-->
    @include('layouts.scripts')
-    <script type="text/javascript">
+    
 
+    <script src="{{asset('js/app.js')}}"></script>
+
+<script type="text/javascript">
       
       $('#datepicker1').datepicker({
         format: "yyyy-mm-dd",

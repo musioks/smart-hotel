@@ -5,16 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS-->
-   <link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
     <title>Smart Joint Hotel</title>
   </head>
-  <style type="text/css">
-    .carousel-inner img{
-      width:100%;
-    }
-  </style>
+
   <body>
       <!--beginning of navigation bar-->
       @include('nav')
@@ -83,10 +79,7 @@
     </div><!--end row-->
 
   </div><!--end main container-->
-   <script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/plugins/pace.min.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
+   <script src="{{asset('js/app.js')}}"></script>
 
   </body>
 </html>

@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>Smart Joint Hotel</title>
-    @include('layouts.styles')
+   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
   </head>
   <body>
 
  <!--beginning of navigation bar-->
       @include('nav')
       <!--end of navigation bar-->
-
-<div class="container-fluid">
-
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
