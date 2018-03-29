@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('title') <i class="fa fa-dashboard"></i> Dashboard @stop
 @section('crumbs') 
-<li><i class="fa fa-home"></i></li>
-<li><a href="#">Dashboard</a></li>
+<li><i class="fa fa-home fa-2x"></i></li>
+<li><a href="{{url('/admin')}}">Dashboard</a></li>
  @stop
 
 @section('content')

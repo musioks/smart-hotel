@@ -2,7 +2,7 @@
      @php $level=Auth::user()->user_level; @endphp
     @switch($level)
     @case($level==1)
-        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+          <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="{{url('/admin')}}">
             <i class="fa fa-fw fa-dashboard"></i>
@@ -17,14 +17,20 @@
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="{{url('admin/meals')}}">
-            <i class="fa fa-fw fa-coffee"></i>
+            <i class="fa fa-fw fa-users"></i>
             <span class="nav-link-text">Meals</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Products">
+          <a class="nav-link" href="{{url('admin/rooms')}}">
+            <i class="fa fa-fw fa-shopping-bag"></i>
+            <span class="nav-link-text">Rooms/Facilities</span>
+          </a>
+        </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders and Bookings">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-book"></i>
-            <span class="nav-link-text">Orders/Bookings</span>
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Orders and Bookings</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
@@ -35,10 +41,9 @@
             </li>
           </ul>
         </li>
-
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="{{url('admin/messages')}}">
-            <i class="fa fa-fw fa-comments"></i>
+            <i class="fa fa-fw fa-users"></i>
             <span class="nav-link-text">Messages</span>
           </a>
         </li>
@@ -111,7 +116,7 @@
       <li><a href="{{url('/admin/booked-rooms')}}"><i class="fa fa-circle-o"></i>Booked Rooms/Facilities</a></li>
       <li><a href="{{url('/admin/ordered-meals')}}"><i class="fa fa-circle-o"></i>Ordered Meals</a></li>
      </ul>
-</li>
+     </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="{{url('admin/messages')}}">
             <i class="fa fa-fw fa-users"></i>

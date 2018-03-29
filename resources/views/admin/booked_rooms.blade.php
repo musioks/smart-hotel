@@ -39,7 +39,6 @@
                           <button type="submit" class="btn btn-info btn-sm">Release</button>
                         </form>
                         </td>
-                          }
                       @else
                       <td><a href="" class="btn btn-success btn-sm">Occupied</a></td>
                       @endif

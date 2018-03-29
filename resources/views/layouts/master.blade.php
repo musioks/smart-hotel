@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Smart-Joint Hotel Management System</title>
+  <title>TOSHA HOTEL MANAGEMENT SYSTEM</title>
   <!-- Bootstrap core CSS-->
 @include('layouts.styles')
 </head>
@@ -25,10 +25,11 @@
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
+      </div>
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © SJMS 2018 </small>
+          <small>Copyright ©2018 TOSHA HOTEL MANAGEMENT SYSTEM </small>
         </div>
       </div>
     </footer>
@@ -56,7 +57,6 @@
     </div>
     <!-- Bootstrap core JavaScript-->
 @include('layouts.scripts')
-  </div>
 </body>
 
 </html>
