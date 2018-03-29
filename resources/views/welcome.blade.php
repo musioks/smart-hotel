@@ -1,37 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS-->
-   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
-    <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
-    <title>Smart Joint Hotel</title>
-  </head>
-
-  <body>
-      <!--beginning of navigation bar-->
-      @include('nav')
-      <!--end of navigation bar-->
+@extends('includes.main')
+@section('content')
 <div class="container">
   <h1></h1>
      <div class="row">
-
-      <div class="col-sm-6 col-sm-offset-3">
+      <div class="col-md-6 offset-md-3">
            <div class="panel panel-success">
-      <div class="panel panel-heading">
-        <h2 class="text-center">Talk to us</h2>
+      <div class="card">
+        <h2 class="card-title text-center text-warning rounded-0">Message Us</h2>
       </div>
-    <div class="panel-body">
+    <div class="card-body">
+<p class="card-text text-center">Please fill out the form below to get in touch.</p>
  <form class="login-form" action="{{url('/message')}}" method="post">
           {{ csrf_field() }}
-          @if(Session::has('error'))
-          <div class="form-group">
-            <p class="alert alert-info">{{Session::get('error')}}</p>
-          </div>
-          @endif
           @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -79,7 +59,4 @@
     </div><!--end row-->
 
   </div><!--end main container-->
-   <script src="{{asset('js/app.js')}}"></script>
-
-  </body>
-</html>
+@endsection

@@ -1,24 +1,12 @@
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS-->
-   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
-    <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
-    <title>Smart Joint Hotel</title>
-  </head>
-  <body>
-    <section class="material-half-bg">
-      <div class="cover"></div>
-    </section>
-    <section class="login-content">
+@extends('includes.main')
+@section('content')
+    <div class="container">
       <div class="logo">
-        <h1>SMART JOINT HOTEL</h1>
+        <h1></h1>
       </div>
+      <div class="row">
+      <div class="col-md-6 offset-md-3">
       <div class="login-box">
         <form class="login-form" action="{{url('/register')}}" method="post">
           {{ csrf_field() }}
@@ -54,9 +42,8 @@
             <button class="btn btn-success btn-block" type="submit"><i class="fa fa-pencil fa-lg fa-fw"></i>SIGN UP</button>
           </div>
         </form>
-      
       </div>
-    </section>
-  </body>
- <script src="{{asset('js/app.js')}}"></script>
-</html>
+    </div>
+  </div><!--end row-->
+</div>
+ @endsection

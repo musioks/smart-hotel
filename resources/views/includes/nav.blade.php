@@ -1,6 +1,6 @@
  @if(Auth::check())
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Smart-Joint Hotel</a>
+  <a class="navbar-brand" href="{{url('/')}}">TOSHA HOTEL MANAGEMENT SYSTEM</a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

@@ -5,10 +5,8 @@
       <!--end of navigation bar-->
       @yield('content')
       <div class="clearfix">&nbsp;</div>
-<div class="jumbotron  rounded-0 mb-0 bg-dark" style="height:20px;">
-	<div class="container">
-		<p class="text-center text-white">{{date('Y')}}&copy Tosha Hotel Management System</p>
-	</div>
+<div class="footer bg-info">
+		<p class=" text-warning text-center pt-4 ">{{date('Y')}}&copy Tosha Hotel Management System</p>
 </div>
          <script src="{{asset('js/app.js')}}"></script>
     <!-- Core plugin JavaScript-->
