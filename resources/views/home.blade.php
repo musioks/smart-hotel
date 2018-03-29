@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Smart Joint Hotel</title>
-   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
-    <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
-  </head>
-  <body>
-
- <!--beginning of navigation bar-->
-      @include('nav')
-      <!--end of navigation bar-->
-
+@extends('includes.main')
+@section('content')
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -42,22 +26,22 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-  <h3 >Welcome to Smart Joint Hotel <span class="label label-success">Please browse some of our facilities below</span>
-
-  </h3>
-  <div class="panel panel-primary">
-    <div class="panel-body">
-      <div class="row">
-    @foreach($rooms as $room)
-        <div class="col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <img src="{{asset('/images/products/'.$room->photo)}}" alt="Room" height="200" width="250" class="img-rounded">
-            <div class="caption">
-              <h3>{{ucfirst($room->name)}}</h3>
-              <p>{{$room->description}}</p>
-              <p>KShs.{{$room->price}}</p>
-                 @if(Auth::check())
+<!-- end carousel -->
+<div class="jumbotron bg-info rounded-0 text-center">
+ <h3 class=" text-white">Welcome to TOSHA HOTEL Services </h3>
+  <p class="text-warning">Have a look at our facilities including rooms, conferences, swimming pools and many more</p>
+ </div><!--end jumbotron-->
+<div class="container">
+ 
+  <div class="card-deck">
+  @foreach($rooms as $room)
+  <div class="card text-center" style="width: 18rem;">
+  <img class="card-img-top img-fluid" src="{{asset('/images/products/'.$room->photo)}}" alt="Card image cap" style="height:400px;">
+  <div class="card-body">
+    <h5 class="card-title">{{ucfirst($room->name)}}</h5>
+    <p class="card-text">{{$room->description}}</p>
+    <p class="card-text">KShs.{{$room->price}}</p>
+     @if(Auth::check())
               <p><a href="" class="btn btn-success" data-toggle="modal" data-target="#myModal"><i class="fa fa-fw fa-shopping-basket"></i>BOOK NOW</a></p>
                <!-- Add My Modal -->
 <div class="modal fade" id="myModal" style="overflow: hidden;" role="dialog" aria-labelledby="myModalLabel">
@@ -92,7 +76,7 @@
                    <input type="text" id="datepicker1" name="checkout_date"  class="form-control input-group date" placeholder="Y-m-d" required=""> 
               </div>
                    
-  <button type="submit" class="btn btn-success">BOOK NOW</button>
+  <button type="submit" class="btn btn-info">BOOK NOW</button>
 </form>
 </div>
       <div class="modal-footer">
@@ -103,40 +87,11 @@
 </div>
 <!-- End My Modal -->
               @else
-               <p><a href="{{url('/customer')}}" class="btn btn-warning"><i class="fa fa-fw fa-rocket"></i>LOGIN TO BOOK</a></p>
+               <p><a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-warning"><i class="fa fa-fw fa-rocket"></i>LOGIN TO BOOK</a></p>
               @endif
-              
-            </div>
-          </div>
-        </div>
-        
-  @endforeach
-      </div>
-    </div>
-      @if(Session::has('error'))
-          <div class="form-group">
-            <p class="alert alert-success">{{Session::get('error')}}</p>
-          </div>
-          @endif
   </div>
+</div>
+@endforeach
+</div><!--end card-deck-->
   </div><!--end main container-->
- @include('layouts.scripts')
-    <script type="text/javascript">
-
-      
-      $('#datepicker1').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        todayHighlight: true
-      });
-         $('#datepicker').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        todayHighlight: true
-      });
-      
-      $('#demoSelect').select2();
-    </script>
-
-  </body>
-</html>
+ @endsection

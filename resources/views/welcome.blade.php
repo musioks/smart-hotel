@@ -19,7 +19,7 @@
   <h1></h1>
      <div class="row">
 
-      <div class="col-sm-8 col-sm-offset-2">
+      <div class="col-sm-6 col-sm-offset-3">
            <div class="panel panel-success">
       <div class="panel panel-heading">
         <h2 class="text-center">Talk to us</h2>

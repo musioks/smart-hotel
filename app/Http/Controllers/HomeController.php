@@ -49,7 +49,7 @@ class HomeController extends Controller
       'phone'=>$request->phone,
       'residence'=>$request->residence,
      ]);
-     return redirect('/customer')->with('success',' Account has been created');
+     return redirect('/')->with('success',' Account has been created');
     }
     public function postRegister(Request $request){
      $this->validate($request,[
