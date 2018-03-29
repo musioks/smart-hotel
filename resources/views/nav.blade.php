@@ -61,13 +61,13 @@
               <label class="control-label">PASSWORD</label>
               <input class="form-control" type="password" name="password" placeholder="Password" required="">
             </div>
-          </form>
+         
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">SIGN IN</button>
       </div>
-   
+    </form>
     </div>
   </div>
 </div>

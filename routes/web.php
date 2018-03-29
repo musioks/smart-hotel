@@ -17,7 +17,7 @@ Route::get('/meals','HomeController@meals');
 Route::post('/meals','HomeController@bookMeal');
 Route::get('/signin','HomeController@login')->name('login');
 Route::post('/signin','HomeController@signin');
-Route::get('/signout', 'HomeController@getLogout')->name('signout');
+Route::post('/signout', 'HomeController@getLogout')->name('signout');
 Route::get('/register', 'HomeController@register');
 Route::post('/register', 'HomeController@postRegister');
 Route::get('/customer', 'HomeController@customer');
