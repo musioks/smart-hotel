@@ -48,11 +48,16 @@
           </a>
         </li>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile">
-          <a class="nav-link" href="{{url('admin/profile')}}">
-            <i class="fa fa-fw fa-address-card-o"></i>
-            <span class="nav-link-text">Profile</span>
-          </a>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logout">
+          <a href="{{ url('/logout') }}" class="nav-link"
+          onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">
+         <i class="fa fa-fw fa-sign-out"></i> Logout
+      </a>
+
+      <form id="logout-form" action="{{ url('/signout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+      </form>
         </li>
       </ul>
         @break
@@ -76,11 +81,16 @@
             <span class="nav-link-text">messages</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile">
-          <a class="nav-link" href="{{url('admin/profile')}}">
-            <i class="fa fa-fw fa-address-card-o"></i>
-            <span class="nav-link-text">Profile</span>
-          </a>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logout">
+          <a href="{{ url('/logout') }}" class="nav-link"
+          onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">
+         <i class="fa fa-fw fa-sign-out"></i> Logout
+      </a>
+
+      <form id="logout-form" action="{{ url('/signout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+      </form>
         </li>
       </ul>
         @break
@@ -124,11 +134,16 @@
           </a>
         </li>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile">
-          <a class="nav-link" href="{{url('admin/profile')}}">
-            <i class="fa fa-fw fa-address-card-o"></i>
-            <span class="nav-link-text">Profile</span>
-          </a>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logout">
+          <a href="{{ url('/logout') }}" class="nav-link"
+          onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">
+         <i class="fa fa-fw fa-sign-out"></i> Logout
+      </a>
+
+      <form id="logout-form" action="{{ url('/signout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+      </form>
         </li>
       </ul>
 
