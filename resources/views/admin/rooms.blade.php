@@ -56,7 +56,7 @@
     @if(Session::has('message'))
             <p class="alert alert-info">{{Session::get('message')}}</p>
           @endif
-      <table class="table table-hover table-bordered" id="myTable">
+      <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>Name</th>

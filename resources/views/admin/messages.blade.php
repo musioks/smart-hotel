@@ -14,7 +14,7 @@
               </h3>
               <hr>
 
-      <table class="table table-hover table-bordered" id="myTable">
+      <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>Name</th>
