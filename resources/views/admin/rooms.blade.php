@@ -63,6 +63,7 @@
                       <th>Description</th>
                       <th>Price</th>
                       <th>Image</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -72,6 +73,67 @@
                       <td>{{$room->description}}</td>
                       <td>{{$room->price}}</td>
                       <td><img src="{{asset('/images/products/'.$room->photo)}}" height="200" width="250"></td>
+      <td>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#panel-modal-{{ $room->id }}"><i class="fa fa-remove"></i></button>
+        <a href="" class="btn btn-success" data-toggle="modal" data-target="#update-modal-{{ $room->id }}">
+          <i class="fa fa-edit"></i>
+         </a>
+      </td>
+       <!-- ====================Delete Modal===========================  -->
+<div id="panel-modal-{{ $room->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+                    <h5>Are you sure you want to delete this room?</h5>
+                </div>
+                  <div class="modal-footer">
+        <a href="{{ url('/admin/rooms/delete/'.$room->id) }}" class="btn btn-success pull-left">Okay</a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+      </div>
+            </div>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- ====================End Delete Modal===========================  -->
+<!-- Update Modal -->
+<div class="modal fade" id="update-modal-{{ $room->id }}" style="overflow: hidden;" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Update Room/Facility Details</h4>
+      </div>
+      <div class="modal-body">
+     <form  role="form" id="update-form-{{$room->id}}" method="post" action="{{ url('/admin/rooms/update') }}" enctype="multipart/form-data" >
+        {{ csrf_field() }}
+        {{ method_field('patch') }}
+<input type="hidden" name="id" value="{{ $room->id }}">
+ <input type="hidden" name="category_id" value="2">
+     <div class="form-group">
+        <label  for="form-username">Room/Facility Identity(name)</label>
+        <input type="text" name="name" value="{{$room->name}}" class="form-control">
+    </div>
+       <div class="form-group">
+        <label  for="form-username">Description</label>
+        <textarea name="description"  class=" form-control" > {{$room->description}} </textarea>
+    </div>
+    <div class="form-group">
+        <label  for="form-username">Price</label>
+        <input type="number" name="price" value="{{$room->price}}" class=" form-control"  min="0">
+    </div>
+      <div class="form-group">
+        <label  for="form-username">Image</label>
+        <input type="file" name="photo"  class=" form-control" value="{{$room->photo}}">
+    </div>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success pull-left" onclick="$('#update-form-{{$room->id}}').submit()">Submit</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Update Modal --> 
                     </tr>
                     @empty
                     <p>No room found!</p>

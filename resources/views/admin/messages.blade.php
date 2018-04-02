@@ -21,6 +21,7 @@
                       <th>Email Address</th>
                       <th>Subject</th>
                       <th>Message</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -30,6 +31,22 @@
                       <td>{{$message->email}}</td>
                       <td>{{$message->subject}}</td>
                       <td>{{$message->body}}</td>
+                      <td><button class="btn btn-danger" data-toggle="modal" data-target="#panel-modal-{{ $message->id }}"><i class="fa fa-remove"></i></button></td>
+                      <!-- ====================Delete Modal===========================  -->
+<div id="panel-modal-{{ $message->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+                    <h5>Are you sure you want to delete this message?</h5>
+                </div>
+                  <div class="modal-footer">
+        <a href="{{ url('/admin/messages/delete/'.$message->id) }}" class="btn btn-success pull-left">Okay</a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+      </div>
+            </div>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- ====================End Delete Modal===========================  -->
                     </tr>
                     @empty
                     <p>No message found!</p>
