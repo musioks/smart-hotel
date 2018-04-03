@@ -75,7 +75,7 @@
 </div>
 <!-- End My Modal -->
               @else
-               <p><a href="{{url('/customer')}}" class="btn btn-warning"><i class="fa fa-fw fa-rocket"></i>LOGIN TO ORDER</a></p>
+               <p><a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-warning"><i class="fa fa-fw fa-rocket"></i>LOGIN TO ORDER</a></p>
               @endif
             </div>
         </div>

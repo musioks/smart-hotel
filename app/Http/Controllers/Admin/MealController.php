@@ -25,6 +25,25 @@ if ($request->hasFile('photo')) {
         $request->photo->move('images/products/',$fileName);
         $meal->update(['photo' => $fileName]);
 }
+
 return redirect()->back()->with('message','Data has been submitted successfully!');
+   }
+     public function update(Request $request){
+   //dd($request->all());
+   $id=$request->id;
+    $food=Product::find($id);
+    $food->update(array_merge($request->all()));
+if ($request->hasFile('photo')) {
+      $file=$request->file('photo');
+        $fileName= time().'.'.$file->getClientOriginalExtension();
+        $request->photo->move('images/products/',$fileName);
+        $food->update(['photo' => $fileName]);
+}
+    return redirect()->back()->with('info','Food/Beverage info has been updated!');
+    }
+   public function destroy($id){
+    $query = DB::table('products')->where('id',$id);
+    $query->delete();
+       return redirect()->back()->with('warning','Meal has been removed!');
    }
 }
