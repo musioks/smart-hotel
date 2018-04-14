@@ -54,7 +54,7 @@
             $customer=\DB::table('customers')->where('user_id',Auth::user()->id)->first();
                 @endphp
 
-               {{$customer->id}}
+               {{$customer->id ?? ""}}
                "> 
                       <div class="form-group"> 
                    <label for="t_date">Checkin Date</label>
