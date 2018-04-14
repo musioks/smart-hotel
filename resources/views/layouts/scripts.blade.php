@@ -31,6 +31,14 @@
             format: 'yyyy-mm-dd',
             autoclose: true
         });
+       $('#datepicker1').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            todayHighlight: true,
+            locale: 'no',
+            format: 'yyyy-mm-dd',
+            autoclose: true
+        });
 
   @if(Session::has('success'))
   toastr.success("{{ Session::get('success') }}");

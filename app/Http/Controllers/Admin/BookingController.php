@@ -14,6 +14,7 @@ $meals=DB::table('bookings')
    	              ->join('categories','products.category_id','=','categories.id')
    	              ->select('bookings.*','products.name','products.price','categories.name as category','customers.name as customer')
    	              ->where('categories.name','like','%meals%')
+                  ->where('bookings.status',1)
    	              ->get();
    	        return view('admin.meal_orders',['meals'=>$meals]);
     }
@@ -29,6 +30,7 @@ $meals=DB::table('bookings')
    	        return view('admin.booked_rooms',['rooms'=>$rooms]);
     }
     public function release(Request $request){
+      dd($request->all());
     	DB::table('bookings')
     	->where('id',$request->id)
     	->update(['status'=>0]);

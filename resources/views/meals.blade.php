@@ -62,6 +62,14 @@
 
                {{$customer->id}}
                "> 
+                      <div class="form-group"> 
+                   <label for="t_date">Checkin Date</label>
+                   <input type="text" id="datepicker" name="checkin_date"  class="form-control input-group date" placeholder="Y-m-d" required=""> 
+              </div>
+                 <div class="form-group"> 
+                   <label for="t_date">Check-out Date</label>
+                   <input type="text" id="datepicker1" name="checkout_date"  class="form-control input-group date" placeholder="Y-m-d" required=""> 
+              </div>
              </div>
                    
   <button type="submit" class="btn btn-success">ORDER NOW</button>

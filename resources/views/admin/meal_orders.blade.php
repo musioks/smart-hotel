@@ -17,6 +17,7 @@
                       <th>Price</th>
                       <th>Customer</th>
                       <th>Checkin date</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -26,6 +27,17 @@
                       <td>{{$meal->price}}</td>
                       <td>{{$meal->customer}}</td>
                       <td>{{$meal->created_at}}</td>
+                      @if($meal->checkout_date <=date('Y-m-d'))
+                      <td>
+                        <form action="{{url('/admin/release')}}" method="post">
+                          {{csrf_field()}}
+                          <input type="hidden" name="id" value="{{$meal->id}}">
+                          <button type="submit" class="btn btn-info btn-sm">Release</button>
+                        </form>
+                        </td>
+                      @else
+                      <td><a href="" class="btn btn-success btn-sm">ORDER</a></td>
+                      @endif
                     </tr>
                     @empty
                     <p>No data found!</p>

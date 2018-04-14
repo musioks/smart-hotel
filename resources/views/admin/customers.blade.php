@@ -30,9 +30,11 @@
                       <td>{{$customer->email}}</td>
                       <td>{{$customer->phone}}</td>
                       <td>{{$customer->residence}}</td>
-                      <td><button class="btn btn-danger" data-toggle="modal" data-target="#panel-modal-{{ $customer->id }}"><i class="fa fa-remove"></i></button></td>
+                      <td>
+                <button class="btn btn-success" data-toggle="modal" data-target="#panel-modal-{{ $customer->id }}"><i class="fa fa-eye"></i>View Report</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#delete-modal-{{ $customer->id }}"><i class="fa fa-remove"></i></button></td>
        <!-- ====================Delete Modal===========================  -->
-<div id="panel-modal-{{ $customer->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div id="delete-modal-{{ $customer->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -46,6 +48,29 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- ====================End Delete Modal===========================  -->
+       <!-- ====================Report Modal===========================  -->
+<div id="panel-modal-{{ $customer->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+  <h3>Customer Report</h3>
+  <hr>
+       <form role="form"   method="post" action="{{ url('/admin/customers') }}" >
+        {{ csrf_field() }}
+        <input type="hidden" name="customer_id" value="{{$customer->id}}">
+
+      <div class="form-group">
+    <button type="submit" class="btn btn-warning btn-block">Generate Report</button>
+</div>
+</form>
+{{--       <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+ --}}      </div>
+        <div class="modal-footer">
+      </div>
+            </div>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- ====================End Report Modal===========================  -->
                     </tr>
                     @empty
                     <p>No Customer found!</p>
