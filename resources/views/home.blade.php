@@ -67,7 +67,6 @@
                <input type="hidden"  name="customer_id"  value="  @php
             $customer=\DB::table('customers')->where('user_id',Auth::user()->id)->first();
                 @endphp
-
                {{$customer->id}}
                "> 
              </div>
