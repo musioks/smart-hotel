@@ -31,7 +31,7 @@
                       <td>{{$room->no_people}}</td>
                       <td>{{$room->checkin_date}}</td>
                       <td>{{$room->checkout_date}}</td>
-                      @if($room->checkout_date <=date('Y-m-d'))
+                      @if($room->status==1)
                       <td>
                         <form action="{{url('/admin/release')}}" method="post">
                           {{csrf_field()}}
@@ -40,7 +40,7 @@
                         </form>
                         </td>
                       @else
-                      <td><a href="" class="btn btn-success btn-sm">Occupied</a></td>
+                      <td><a href="" class="btn btn-success btn-sm">Book</a></td>
                       @endif
                     </tr>
                     @empty

@@ -27,7 +27,7 @@
                       <td>{{$meal->price}}</td>
                       <td>{{$meal->customer}}</td>
                       <td>{{$meal->created_at}}</td>
-                      @if($meal->checkout_date <=date('Y-m-d'))
+                      @if($meal->status==1)
                       <td>
                         <form action="{{url('/admin/release')}}" method="post">
                           {{csrf_field()}}
