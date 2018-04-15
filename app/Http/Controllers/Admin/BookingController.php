@@ -30,7 +30,7 @@ $meals=DB::table('bookings')
    	        return view('admin.booked_rooms',['rooms'=>$rooms]);
     }
     public function release(Request $request){
-      dd($request->all());
+      //dd($request->all());
     	DB::table('bookings')
     	->where('id',$request->id)
     	->update(['status'=>0]);

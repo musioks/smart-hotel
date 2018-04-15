@@ -36,7 +36,7 @@
                         <form action="{{url('/admin/release')}}" method="post">
                           {{csrf_field()}}
                           <input type="hidden" name="id" value="{{$room->id}}">
-                          <button type="submit" class="btn btn-info btn-sm">Release</button>
+                          <button type="submit" class="btn btn-info btn-sm" onclick="confirm('Are you sure you want to release this product?')">Release</button>
                         </form>
                         </td>
                       @else
