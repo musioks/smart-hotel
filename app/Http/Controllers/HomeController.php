@@ -63,7 +63,7 @@ class HomeController extends Controller
      $user->email=$request->email;
      $user->password=bcrypt($request->password);
      $user->save();
-     return redirect('/customer')->with('error',' Account has been created');
+     return redirect('/customer')->with('success',' Account has been created');
     }
   public function login(){
    	return view('welcome');
@@ -101,22 +101,28 @@ class HomeController extends Controller
   'body'=>'required',
      ]);
     \App\Message::create(array_merge($request->all()));
-     return redirect()->back()->with('error',' Message has been send!');
+     return redirect()->back()->with('success',' Message has been send!');
     }
       public function bookMeal(Request $request){
  
     \App\Booking::create(array_merge($request->all()));
-     return redirect()->back()->with('error',' Meal has been ordered successfully!');
+     return redirect()->back()->with('success',' Meal has been ordered successfully!');
     }
       public function bookRoom(Request $request){
   $status=DB::table('bookings')->where('product_id',$request->product_id)->latest()->first();
+  if(collect($status)->isEmpty()){
+\App\Booking::create(array_merge($request->all()));
+    return redirect()->back()->with('success','You have booked the room successfully!');
+  }
+    else{
   if($status->status==1){
-     return redirect()->back()->with('error',' Room has already been booked!');
+     return redirect()->back()->with('warning',' Room has already been booked!');
   }
   else{
     \App\Booking::create(array_merge($request->all()));
-    return redirect()->back()->with('error','You have booked the room successfully!');
+    return redirect()->back()->with('success','You have booked the room successfully!');
+}
+  }  
 }
     
-    }
 }

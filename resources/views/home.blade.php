@@ -64,6 +64,7 @@
               {{ csrf_field() }}
              <div class="form-group"> 
                <input type="hidden"  name="product_id"  value="{{$room->id}}"> 
+               <input type="hidden"  name="status"  value="1"> 
                <input type="hidden"  name="customer_id"  value="  @php
             $customer=\DB::table('customers')->where('user_id',Auth::user()->id)->first();
                 @endphp
