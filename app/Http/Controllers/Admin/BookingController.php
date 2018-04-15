@@ -35,7 +35,7 @@ $meals=DB::table('bookings')
     	->where('id',$request->id)
     	->update(['status'=>0]);
 
-    	return redirect()->back();
+    	return redirect()->back()->with('info','Booking has been updated!');
     }
 
 }
